@@ -38,11 +38,14 @@ TEST_CASES = [
     }
 ]
 
-def capture_logs_to_file(logs_buffer, component, action, result):
+def capture_logs_to_file(logs_buffer, component, action, result, tokens=None):
     """Custom format for capturing logs to comparison_report.txt"""
     from datetime import datetime
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    logs_buffer.append(f"[{timestamp}] | [{component}] | [{action}] | [{result}]")
+    formatted_msg = f"[{timestamp}] | [{component}] | [{action}] | [{result}]"
+    if tokens is not None:
+        formatted_msg += f" | [Tokens: {tokens}]"
+    logs_buffer.append(formatted_msg)
 
 def run_baseline(llm, user_input):
     """Runs the prompt directly against the LLM without tools."""
@@ -108,9 +111,9 @@ def main():
                 original_log_step = logger.log_step
                 logs_buffer = []
 
-                def custom_log_step(component, action, result):
-                    original_log_step(component, action, result)
-                    capture_logs_to_file(logs_buffer, component, action, result)
+                def custom_log_step(component, action, result, tokens=None):
+                    original_log_step(component, action, result, tokens=tokens)
+                    capture_logs_to_file(logs_buffer, component, action, result, tokens=tokens)
 
                 logger.log_step = custom_log_step
 
@@ -169,9 +172,9 @@ def main():
                     
                     original_log_step = logger.log_step
                     logs_buffer = []
-                    def custom_log_step(component, action, result):
-                        original_log_step(component, action, result)
-                        capture_logs_to_file(logs_buffer, component, action, result)
+                    def custom_log_step(component, action, result, tokens=None):
+                        original_log_step(component, action, result, tokens=tokens)
+                        capture_logs_to_file(logs_buffer, component, action, result, tokens=tokens)
                     logger.log_step = custom_log_step
                     
                     agent_ans = agent.run(user_input)

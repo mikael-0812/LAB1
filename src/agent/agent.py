@@ -83,7 +83,11 @@ Final Answer: You are currently located at Quận 1, TP.HCM.
             final_match = re.search(r"Final Answer:\s*(.*)", result_text, re.DOTALL)
             
             thought = thought_match.group(1).strip() if thought_match else "No thought found."
-            logger.log_step("Agent", "Thought", thought)
+            
+            usage = response.get("usage", {})
+            total_tokens = usage.get("total_tokens", None)
+            
+            logger.log_step("Agent", "Thought", thought, tokens=total_tokens)
 
             if final_match:
                 final_answer = final_match.group(1).strip()

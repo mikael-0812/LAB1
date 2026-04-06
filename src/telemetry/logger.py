@@ -44,13 +44,15 @@ class IndustryLogger:
     def error(self, msg: str, exc_info=True):
         self.logger.error(msg, exc_info=exc_info)
 
-    def log_step(self, component: str, action: str, result: str):
+    def log_step(self, component: str, action: str, result: str, tokens: int = None):
         """Logs an agent step with the exact required format."""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         formatted_msg = f"[{timestamp}] | [{component}] | [{action}] | [{result}]"
+        if tokens is not None:
+            formatted_msg += f" | [Tokens: {tokens}]"
         print(formatted_msg)
         # Also save it as JSON in the file log
-        self.log_event("step", {"component": component, "action": action, "result": result})
+        self.log_event("step", {"component": component, "action": action, "result": result, "tokens": tokens})
 
 # Global logger instance
 logger = IndustryLogger()
