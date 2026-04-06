@@ -1,600 +1,600 @@
 [
     {
-        "name": "Áo thun cotton basic trắng",
+        "name": "Product 1",
         "price": 71.3,
         "in_stock": true,
         "discount": 0.33
     },
     {
-        "name": "Áo thun oversized đen",
+        "name": "Product 2",
         "price": 148.48,
         "in_stock": false,
         "discount": 0.32
     },
     {
-        "name": "Áo polo xanh navy",
+        "name": "Product 3",
         "price": 188.81,
         "in_stock": true,
         "discount": 0.33
     },
     {
-        "name": "Áo sơ mi linen trắng",
+        "name": "Product 4",
         "price": 74.51,
         "in_stock": true,
         "discount": 0.35
     },
     {
-        "name": "Áo sơ mi ngắn tay kẻ sọc",
+        "name": "Product 5",
         "price": 67.31,
         "in_stock": false,
         "discount": 0.13
     },
     {
-        "name": "Áo hai dây satin kem",
+        "name": "Product 6",
         "price": 20.32,
         "in_stock": true,
         "discount": 0.06
     },
     {
-        "name": "Áo croptop ribbed be",
+        "name": "Product 7",
         "price": 35.45,
         "in_stock": false,
         "discount": 0.46
     },
     {
-        "name": "Áo blouse tay phồng hoa nhí",
+        "name": "Product 8",
         "price": 116.29,
         "in_stock": false,
         "discount": 0.23
     },
     {
-        "name": "Áo hoodie nỉ xám",
+        "name": "Product 9",
         "price": 156.55,
         "in_stock": false,
         "discount": 0.4
     },
     {
-        "name": "Áo len mỏng cổ tim",
+        "name": "Product 10",
         "price": 104.88,
         "in_stock": false,
         "discount": 0.41
     },
     {
-        "name": "Áo cardigan dệt kim màu kem",
+        "name": "Product 11",
         "price": 184.12,
         "in_stock": true,
         "discount": 0.36
     },
     {
-        "name": "Áo khoác denim xanh nhạt",
+        "name": "Product 12",
         "price": 115.88,
         "in_stock": false,
         "discount": 0.31
     },
     {
-        "name": "Áo khoác bomber kaki",
+        "name": "Product 13",
         "price": 47.15,
         "in_stock": false,
         "discount": 0.44
     },
     {
-        "name": "Áo blazer oversize đen",
+        "name": "Product 14",
         "price": 193.84,
         "in_stock": false,
         "discount": 0.15
     },
     {
-        "name": "Áo gile len xám",
+        "name": "Product 15",
         "price": 189.55,
         "in_stock": false,
         "discount": 0.35
     },
     {
-        "name": "Quần jeans ống suông xanh",
+        "name": "Product 16",
         "price": 51.96,
         "in_stock": true,
         "discount": 0.48
     },
     {
-        "name": "Quần jeans skinny đen",
+        "name": "Product 17",
         "price": 184.42,
         "in_stock": true,
         "discount": 0.41
     },
     {
-        "name": "Quần kaki be dáng slim",
+        "name": "Product 18",
         "price": 80.43,
         "in_stock": false,
         "discount": 0.31
     },
     {
-        "name": "Quần short denim xanh",
+        "name": "Product 19",
         "price": 69.95,
         "in_stock": true,
         "discount": 0.4
     },
     {
-        "name": "Quần short kaki be",
+        "name": "Product 20",
         "price": 154.26,
         "in_stock": false,
         "discount": 0.03
     },
     {
-        "name": "Quần jogger nỉ xám",
+        "name": "Product 21",
         "price": 13.1,
         "in_stock": true,
         "discount": 0.37
     },
     {
-        "name": "Quần tây ống đứng đen",
+        "name": "Product 22",
         "price": 172.3,
         "in_stock": true,
         "discount": 0.06
     },
     {
-        "name": "Quần culottes kem",
+        "name": "Product 23",
         "price": 65.62,
         "in_stock": true,
         "discount": 0.05
     },
     {
-        "name": "Quần legging thể thao đen",
+        "name": "Product 24",
         "price": 131.42,
         "in_stock": false,
         "discount": 0.15
     },
     {
-        "name": "Chân váy midi xếp ly",
+        "name": "Product 25",
         "price": 124.7,
         "in_stock": false,
         "discount": 0.04
     },
     {
-        "name": "Chân váy denim chữ A",
+        "name": "Product 26",
         "price": 151.33,
         "in_stock": true,
         "discount": 0.38
     },
     {
-        "name": "Chân váy lụa dài màu kem",
+        "name": "Product 27",
         "price": 138.65,
         "in_stock": false,
         "discount": 0.25
     },
     {
-        "name": "Váy maxi hoa nhí",
+        "name": "Product 28",
         "price": 74.07,
         "in_stock": false,
         "discount": 0.37
     },
     {
-        "name": "Váy midi cổ vuông",
+        "name": "Product 29",
         "price": 75.04,
         "in_stock": false,
         "discount": 0.04
     },
     {
-        "name": "Đầm body ribbed đen",
+        "name": "Product 30",
         "price": 154.91,
         "in_stock": true,
         "discount": 0.21
     },
     {
-        "name": "Đầm suông linen be",
+        "name": "Product 31",
         "price": 151.94,
         "in_stock": true,
         "discount": 0.27
     },
     {
-        "name": "Jumpsuit ngắn màu olive",
+        "name": "Product 32",
         "price": 57.63,
         "in_stock": false,
         "discount": 0.19
     },
     {
-        "name": "Set bộ áo thun và quần short",
+        "name": "Product 33",
         "price": 37.67,
         "in_stock": false,
         "discount": 0.31
     },
     {
-        "name": "Set blazer và quần tây be",
+        "name": "Product 34",
         "price": 67.88,
         "in_stock": false,
         "discount": 0.29
     },
     {
-        "name": "Áo ba lỗ thể thao trắng",
+        "name": "Product 35",
         "price": 60.85,
         "in_stock": false,
         "discount": 0.47
     },
     {
-        "name": "Áo tanktop đen",
+        "name": "Product 36",
         "price": 84.4,
         "in_stock": true,
         "discount": 0.32
     },
     {
-        "name": "Áo cổ lọ mỏng nâu",
+        "name": "Product 37",
         "price": 53.64,
         "in_stock": false,
         "discount": 0.18
     },
     {
-        "name": "Áo sơ mi oversize xanh pastel",
+        "name": "Product 38",
         "price": 167.22,
         "in_stock": false,
         "discount": 0.42
     },
     {
-        "name": "Áo blouse voan trắng",
+        "name": "Product 39",
         "price": 174.42,
         "in_stock": true,
         "discount": 0.28
     },
     {
-        "name": "Áo peplum hồng phấn",
+        "name": "Product 40",
         "price": 69.67,
         "in_stock": true,
         "discount": 0.26
     },
     {
-        "name": "Quần ống rộng linen trắng",
+        "name": "Product 41",
         "price": 115.69,
         "in_stock": true,
         "discount": 0.08
     },
     {
-        "name": "Quần ống loe denim xanh",
+        "name": "Product 42",
         "price": 67.27,
         "in_stock": true,
         "discount": 0.3
     },
     {
-        "name": "Quần cargo xanh rêu",
+        "name": "Product 43",
         "price": 35.82,
         "in_stock": true,
         "discount": 0.23
     },
     {
-        "name": "Quần short thể thao đen",
+        "name": "Product 44",
         "price": 94.53,
         "in_stock": true,
         "discount": 0.15
     },
     {
-        "name": "Quần baggy jeans xám",
+        "name": "Product 45",
         "price": 81.96,
         "in_stock": false,
         "discount": 0.23
     },
     {
-        "name": "Chân váy tennis trắng",
+        "name": "Product 46",
         "price": 36.42,
         "in_stock": false,
         "discount": 0.23
     },
     {
-        "name": "Chân váy chữ A đen",
+        "name": "Product 47",
         "price": 118.55,
         "in_stock": false,
         "discount": 0.08
     },
     {
-        "name": "Váy wrap dress xanh lá",
+        "name": "Product 48",
         "price": 129.81,
         "in_stock": false,
         "discount": 0.13
     },
     {
-        "name": "Đầm hai dây hoa nhỏ",
+        "name": "Product 49",
         "price": 15.98,
         "in_stock": true,
         "discount": 0.17
     },
     {
-        "name": "Đầm sơ mi trắng",
+        "name": "Product 50",
         "price": 72.91,
         "in_stock": true,
         "discount": 0.19
     },
     {
-        "name": "Sandal quai mảnh màu nude",
+        "name": "Product 51",
         "price": 61.16,
         "in_stock": true,
         "discount": 0.05
     },
     {
-        "name": "Sandal đế xuồng nâu",
+        "name": "Product 52",
         "price": 95.01,
         "in_stock": false,
         "discount": 0.04
     },
     {
-        "name": "Dép lê da tối giản",
+        "name": "Product 53",
         "price": 136.32,
         "in_stock": false,
         "discount": 0.48
     },
     {
-        "name": "Giày sneaker trắng basic",
+        "name": "Product 54",
         "price": 110.07,
         "in_stock": false,
         "discount": 0.4
     },
     {
-        "name": "Giày sneaker chunky be",
+        "name": "Product 55",
         "price": 71.16,
         "in_stock": true,
         "discount": 0.43
     },
     {
-        "name": "Giày loafer đen bóng",
+        "name": "Product 56",
         "price": 35.36,
         "in_stock": true,
         "discount": 0.29
     },
     {
-        "name": "Giày búp bê mũi vuông",
+        "name": "Product 57",
         "price": 142.15,
         "in_stock": true,
         "discount": 0.47
     },
     {
-        "name": "Giày cao gót kitten heel",
+        "name": "Product 58",
         "price": 68.25,
         "in_stock": false,
         "discount": 0.36
     },
     {
-        "name": "Giày boot cổ ngắn đen",
+        "name": "Product 59",
         "price": 191.92,
         "in_stock": false,
         "discount": 0.28
     },
     {
-        "name": "Túi tote canvas kem",
+        "name": "Product 60",
         "price": 195.99,
         "in_stock": true,
         "discount": 0.27
     },
     {
-        "name": "Túi đeo chéo mini đen",
+        "name": "Product 61",
         "price": 76.56,
         "in_stock": false,
         "discount": 0.13
     },
     {
-        "name": "Túi xách vai da nâu",
+        "name": "Product 62",
         "price": 158.08,
         "in_stock": true,
         "discount": 0.31
     },
     {
-        "name": "Balo vải chống nước đen",
+        "name": "Product 63",
         "price": 89.12,
         "in_stock": false,
         "discount": 0.03
     },
     {
-        "name": "Mũ lưỡi trai trắng",
+        "name": "Product 64",
         "price": 94.83,
         "in_stock": false,
         "discount": 0.21
     },
     {
-        "name": "Mũ bucket kaki",
+        "name": "Product 65",
         "price": 81.31,
         "in_stock": true,
         "discount": 0.35
     },
     {
-        "name": "Kính mát gọng vuông",
+        "name": "Product 66",
         "price": 115.99,
         "in_stock": true,
         "discount": 0.5
     },
     {
-        "name": "Khăn choàng lụa họa tiết",
+        "name": "Product 67",
         "price": 31.82,
         "in_stock": false,
         "discount": 0.2
     },
     {
-        "name": "Thắt lưng da bản nhỏ",
+        "name": "Product 68",
         "price": 171.65,
         "in_stock": false,
         "discount": 0.4
     },
     {
-        "name": "Vớ cổ ngắn trắng",
+        "name": "Product 69",
         "price": 94.19,
         "in_stock": false,
         "discount": 0.14
     },
     {
-        "name": "Áo chống nắng UV xanh nhạt",
+        "name": "Product 70",
         "price": 87.31,
         "in_stock": false,
         "discount": 0.05
     },
     {
-        "name": "Áo khoác gió mỏng",
+        "name": "Product 71",
         "price": 52.25,
         "in_stock": true,
         "discount": 0.31
     },
     {
-        "name": "Áo phông in graphic",
+        "name": "Product 72",
         "price": 122.78,
         "in_stock": false,
         "discount": 0.13
     },
     {
-        "name": "Áo polo trắng kem",
+        "name": "Product 73",
         "price": 195.99,
         "in_stock": true,
         "discount": 0.29
     },
     {
-        "name": "Áo sơ mi công sở xanh nhạt",
+        "name": "Product 74",
         "price": 26.03,
         "in_stock": false,
         "discount": 0.05
     },
     {
-        "name": "Áo cardigan croptop hồng",
+        "name": "Product 75",
         "price": 98.21,
         "in_stock": false,
         "discount": 0.4
     },
     {
-        "name": "Quần jogger kaki đen",
+        "name": "Product 76",
         "price": 66.41,
         "in_stock": true,
         "discount": 0.06
     },
     {
-        "name": "Quần short lưng thun xám",
+        "name": "Product 77",
         "price": 88.26,
         "in_stock": true,
         "discount": 0.17
     },
     {
-        "name": "Quần tây lưng cao be",
+        "name": "Product 78",
         "price": 96.99,
         "in_stock": false,
         "discount": 0.33
     },
     {
-        "name": "Quần jeans rách gối xanh",
+        "name": "Product 79",
         "price": 90.97,
         "in_stock": false,
         "discount": 0.49
     },
     {
-        "name": "Chân váy xòe hoa nhí",
+        "name": "Product 80",
         "price": 120.68,
         "in_stock": false,
         "discount": 0.26
     },
     {
-        "name": "Chân váy midi denim xanh",
+        "name": "Product 81",
         "price": 145.22,
         "in_stock": false,
         "discount": 0.43
     },
     {
-        "name": "Váy babydoll trắng",
+        "name": "Product 82",
         "price": 31.89,
         "in_stock": true,
         "discount": 0.22
     },
     {
-        "name": "Váy maxi trễ vai",
+        "name": "Product 83",
         "price": 57.78,
         "in_stock": true,
         "discount": 0.37
     },
     {
-        "name": "Đầm dự tiệc satin đen",
+        "name": "Product 84",
         "price": 52.05,
         "in_stock": true,
         "discount": 0.42
     },
     {
-        "name": "Đầm công sở xanh navy",
+        "name": "Product 85",
         "price": 111.37,
         "in_stock": false,
         "discount": 0.1
     },
     {
-        "name": "Sandal thể thao quai dán",
+        "name": "Product 86",
         "price": 36.94,
         "in_stock": false,
         "discount": 0.24
     },
     {
-        "name": "Dép xỏ ngón tối giản",
+        "name": "Product 87",
         "price": 10.84,
         "in_stock": false,
         "discount": 0.19
     },
     {
-        "name": "Giày chạy bộ màu xám",
+        "name": "Product 88",
         "price": 12.28,
         "in_stock": false,
         "discount": 0.49
     },
     {
-        "name": "Giày Mary Jane đen",
+        "name": "Product 89",
         "price": 48.79,
         "in_stock": true,
         "discount": 0.11
     },
     {
-        "name": "Túi tote denim",
+        "name": "Product 90",
         "price": 146.97,
         "in_stock": true,
         "discount": 0.29
     },
     {
-        "name": "Túi bucket da nâu",
+        "name": "Product 91",
         "price": 123.41,
         "in_stock": false,
         "discount": 0.31
     },
     {
-        "name": "Mũ cói vành nhỏ",
+        "name": "Product 92",
         "price": 87.73,
         "in_stock": false,
         "discount": 0.02
     },
     {
-        "name": "Kính râm gọng tròn",
+        "name": "Product 93",
         "price": 135.74,
         "in_stock": false,
         "discount": 0.33
     },
     {
-        "name": "Khăn bandana đỏ đô",
+        "name": "Product 94",
         "price": 189.82,
         "in_stock": false,
         "discount": 0.37
     },
     {
-        "name": "Dây chuyền bạc tối giản",
+        "name": "Product 95",
         "price": 26.9,
         "in_stock": false,
         "discount": 0.13
     },
     {
-        "name": "Bông tai ngọc trai nhỏ",
+        "name": "Product 96",
         "price": 44.22,
         "in_stock": true,
         "discount": 0.3
     },
     {
-        "name": "Áo len gân màu rêu",
+        "name": "Product 97",
         "price": 11.71,
         "in_stock": false,
         "discount": 0.3
     },
     {
-        "name": "Quần nỉ ống rộng xám",
+        "name": "Product 98",
         "price": 169.75,
         "in_stock": true,
         "discount": 0.23
     },
     {
-        "name": "Váy tennis xếp ly trắng",
+        "name": "Product 99",
         "price": 85.82,
         "in_stock": true,
         "discount": 0.4
     },
     {
-        "name": "Áo sơ mi linen xanh olive",
+        "name": "Product 100",
         "price": 135.55,
         "in_stock": true,
         "discount": 0.37

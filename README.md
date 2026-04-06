@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ### 2. Tạo file môi trường
 
 ```bash
-cp .env.example .env
+cp .env .env
 ```
 
 Sau đó điền API key nếu bạn dùng OpenAI hoặc Gemini.

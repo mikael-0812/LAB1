@@ -34,18 +34,34 @@ def generate_tools_schema():
 def execute_dynamic_tool(tool_name: str, args_str: str) -> str:
     """Dynamically executes a tool function from tools.py."""
     if not hasattr(tools, tool_name):
-        return f"Error: Tool {tool_name} is not available."
-        
+        return json.dumps(
+            {"ok": False, "error_type": "tool_not_found", "message": f"Tool {tool_name} is not available."},
+            ensure_ascii=False
+        )
+
     func = getattr(tools, tool_name)
     try:
         if not args_str or args_str.strip() == "" or args_str == "{}":
-            return str(func())
-            
-        args = json.loads(args_str)
-        # Call the function and forcefully convert result to string
-        return str(func(**args))
-    except Exception as e:
-        return f"Error calling tool {tool_name}: {str(e)}"
+            result = func()
+        else:
+            args = json.loads(args_str)
+            result = func(**args)
 
+        if result is None:
+            return json.dumps(
+                {"ok": False, "error_type": "no_data", "message": "No data found."},
+                ensure_ascii=False
+            )
+
+        if isinstance(result, (dict, list)):
+            return json.dumps(result, ensure_ascii=False)
+
+        return str(result)
+
+    except Exception as e:
+        return json.dumps(
+            {"ok": False, "error_type": "tool_execution_error", "message": f"Error calling tool {tool_name}: {str(e)}"},
+            ensure_ascii=False
+        )
 # Generate the global schema array for agent injection
 DYNAMIC_TOOLS_SCHEMA = generate_tools_schema()

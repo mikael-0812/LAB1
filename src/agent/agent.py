@@ -12,19 +12,13 @@ class ReActAgent:
     A ReAct-style Agent that follows the Thought-Action-Observation loop.
     Implements the core loop logic and tool execution.
     """
-    
+
     def __init__(self, llm: LLMProvider, tools: List[Dict[str, Any]], max_steps: int = 7):
         self.llm = llm
         self.tools = tools
         self.max_steps = max_steps
         self.history: List[Dict[str, str]] = []
-
-        self.tool_map = {}
-        for tool in tools:
-            name = tool.get("name")
-            fn = tool.get("function")
-            if name:
-                self.tool_map[name] = fn
+        self.tool_names = {tool["name"] for tool in tools if "name" in tool}
 
     def get_system_prompt(self) -> str:
         """
@@ -40,6 +34,20 @@ You are an intelligent assistant. You must solve the user's request by calling o
 You have access to the following tools:
 {tool_descriptions}
 
+FASHION / WEATHER RULES:
+- If the user asks for clothing or fashion suggestions based on weather, first use get_weather if real-time weather is needed.
+- If get_weather fails, do NOT escalate_to_human.
+- Instead, respond in Vietnamese and ask the user to describe the weather manually, for example:
+  "Mình chưa lấy được dữ liệu thời tiết thực tế ở Hà Nội lúc này. Bạn cho mình biết hiện tại trời nóng hay mát, có nắng hay mưa, và bạn cần mặc để đi làm hay đi chơi, mình sẽ gợi ý các mặt hàng phù hợp hơn từ cửa hàng nhé."
+- If the user already provides weather details manually, use recommend_fashion_manual.
+- Only recommend clothing item names returned by the fashion recommendation tools.
+- Do not invent product names that are not present in the database.
+
+Example:
+User Request: Trời nóng có nắng, mình đi chơi, gợi ý đồ giúp mình.
+Thought: User already provided weather and occasion manually, so I should use the fashion recommendation tool directly.
+Action: recommend_fashion_manual({{"weather": "nóng có nắng", "occasion": "đi chơi"}})
+
 CRITICAL: If any tool (like check_payment) returns an error (e.g. Error 500) or if you cannot satisfy the user, you MUST immediately call the 'escalate_to_human' tool to escalate the problem!
 
 Always use the following exact format for your responses:
@@ -49,6 +57,8 @@ Observation: the result of the tool call
 
 When you have the final answer, output:
 Final Answer: your final response to the user.
+Always respond to the user in Vietnamese.
+Even if tool outputs or internal reasoning are in English, the Final Answer must be in Vietnamese.
 
 If the user asks a question that is absolutely impossible to answer using the provided tools and cannot be resolved, you MUST end your Final Answer with exactly the tag: [OUT_OF_SCOPE].
 
@@ -122,9 +132,14 @@ Final Answer: You are currently located at Quận 1, TP.HCM.
         """
         Helper method to execute tools.
         """
-        # Add basic validation for tools
-        valid_tools = [t['name'] for t in self.tools]
-        if tool_name not in valid_tools:
+        if tool_name not in self.tool_names:
             return f"Error: Tool {tool_name} is not available."
-            
-        return execute_dynamic_tool(tool_name, args)
+
+        result = execute_dynamic_tool(tool_name, args)
+
+        if result is None or result == "None":
+            return "Error: No data found."
+
+        Observation: {"ok": "false", "error": "Weather API request failed"}
+
+        return result

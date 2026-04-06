@@ -132,7 +132,7 @@ def run_agent_with_trace(llm, user_input: str) -> Tuple[str, List[str]]:
     trace_lines: List[str] = []
     original_log_step = logger.log_step
 
-    def capture_log_step(component: str, action: str, result: str):
+    def capture_log_step(component: str, action: str, result: str, *args, **kwargs):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         line = f"[{timestamp}] | [{component}] | [{action}] | [{result}]"
         trace_lines.append(line)

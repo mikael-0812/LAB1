@@ -1,8 +1,53 @@
 import json
 import os
-
+import requests
 # Base directory for database files
 DATABASE_DIR = 'database'
+
+
+import os
+import requests
+
+def get_weather(city: str) -> dict:
+    api_key = os.getenv("OPENWEATHER_API_KEY")
+    if not api_key:
+        return {
+            "ok": False,
+            "error_type": "missing_api_key",
+            "message": "OPENWEATHER_API_KEY is not set."
+        }
+
+    try:
+        resp = requests.get(
+            "https://api.openweathermap.org/data/2.5/weather",
+            params={
+                "q": city,
+                "appid": api_key,
+                "units": "metric",
+                "lang": "vi"
+            },
+            timeout=10,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+
+        return {
+            "ok": True,
+            "city": data["name"],
+            "country": data["sys"]["country"],
+            "temperature_c": data["main"]["temp"],
+            "feels_like_c": data["main"]["feels_like"],
+            "condition": data["weather"][0]["description"],
+            "humidity": data["main"]["humidity"],
+            "wind_mps": data["wind"]["speed"],
+        }
+
+    except Exception as e:
+        return {
+            "ok": False,
+            "error_type": "weather_api_error",
+            "message": str(e)
+        }
 
 def load_data(filename):
     """Load data from a JSON file in the database directory."""
@@ -16,7 +61,7 @@ def load_data(filename):
 def check_out_of_stock(item_name):
     """
     Check if an item is out of stock in the fashion store.
-    Reads from fashion.json and returns True if the item is not in stock.
+    Reads from fashion_1.json and returns True if the item is not in stock.
     """
     try:
         data = load_data('fashion.json')
@@ -30,7 +75,7 @@ def check_out_of_stock(item_name):
 def discount(item_name):
     """
     Get the discount percentage for an item in the fashion store.
-    Reads from fashion.json and returns the discount value.
+    Reads from fashion_1.json and returns the discount value.
     """
     try:
         data = load_data('fashion.json')
@@ -44,7 +89,7 @@ def discount(item_name):
 def price(item_name):
     """
     Get the price of an item in the fashion store.
-    Reads from fashion.json and returns a dict with name, price, discount if found.
+    Reads from fashion_1.json and returns a dict with name, price, discount if found.
     """
     try:
         data = load_data('fashion.json')
@@ -82,6 +127,83 @@ def search_fashion(criteria):
         return results[:5]  # Limit to 5 results
     except Exception as e:
         return f"Error: {str(e)}"
+
+def recommend_fashion_manual(weather: str, occasion: str = ""):
+    """
+    Recommend fashion items from fashion.json based on user-provided weather description
+    and optional occasion.
+
+    Arguments:
+    - weather: short description such as "nóng có nắng", "mát có mưa"
+    - occasion: optional usage context such as "đi làm", "đi chơi"
+
+    Returns a list of matching items from the fashion database.
+    """
+    try:
+        data = load_data("fashion.json")
+        weather_l = weather.lower()
+        occasion_l = occasion.lower()
+
+        keywords = []
+
+        # thời tiết nóng / nắng
+        if "nóng" in weather_l or "ấm" in weather_l or "nắng" in weather_l:
+            keywords.extend([
+                "áo thun", "áo sơ mi linen", "áo sơ mi ngắn tay",
+                "quần short", "chân váy", "váy", "đầm",
+                "sandal", "mũ", "kính"
+            ])
+
+        # thời tiết mát
+        if "mát" in weather_l:
+            keywords.extend([
+                "áo thun", "áo sơ mi", "quần dài", "jeans",
+                "chân váy", "giày sneaker"
+            ])
+
+        # thời tiết mưa
+        if "mưa" in weather_l:
+            keywords.extend([
+                "áo khoác", "quần dài", "giày sneaker", "túi chống nước"
+            ])
+
+        # theo mục đích
+        if "đi làm" in occasion_l:
+            keywords.extend([
+                "áo sơ mi", "quần tây", "chân váy midi", "blazer"
+            ])
+
+        if "đi chơi" in occasion_l:
+            keywords.extend([
+                "áo thun", "quần short", "váy", "đầm", "sandal"
+            ])
+
+        # fallback nếu user mô tả quá ít
+        if not keywords:
+            keywords.extend([
+                "áo thun", "áo sơ mi", "quần short", "quần dài", "váy", "giày"
+            ])
+
+        keywords = [k.lower() for k in keywords]
+
+        results = []
+        for item in data:
+            name = item["name"].lower()
+            if any(k in name for k in keywords):
+                results.append({
+                    "name": item["name"],
+                    "price": item["price"],
+                    "discount": item.get("discount", 0.0),
+                    "in_stock": item.get("in_stock", True),
+                })
+
+        # ưu tiên hàng còn hàng
+        results.sort(key=lambda x: (not x["in_stock"], x["price"]))
+
+        return results[:5]
+
+    except Exception as e:
+        return {"error": str(e)}
 
 # Course Registration Tools
 def prerequisite_check(course_name):
