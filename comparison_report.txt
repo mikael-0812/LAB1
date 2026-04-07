@@ -1,0 +1,189 @@
+=== BÁO CÁO SO SÁNH CHATBOT TRUYỀN THỐNG VÀ REACT AGENT ===
+
+==================================================
+Test Case TC1: Fashion: Tìm quần áo có giá < 50.
+USER INPUT: Hãy tìm những sản phẩm thời trang có giá nhỏ hơn 50 giúp tôi nhé.
+--------------------------------------------------
+[BASELINE CHATBOT RESULT]
+Xin lỗi, tôi không thể tìm kiếm sản phẩm thời trang cụ thể hoặc thực hiện các giao dịch mua sắm cho bạn được. Bạn có thể tìm kiếm trên các trang web mua sắm trực tuyến như Shopee, Lazada hoặc Tiki và sử dụng bộ lọc giá để tìm các sản phẩm thời trang giá dưới 50. [UNSUPPORTED]
+
+--------------------------------------------------
+[REACT AGENT TRACE & RESULT]
+[2026-04-06 22:18:56] | [Agent] | [Thought] | [The user is asking for fashion items that have a price less than 50. I should use the search_fashion tool to find these items.]
+[2026-04-06 22:18:56] | [Agent] | [Action] | [search_fashion({"criteria": "price < 50"})]
+[2026-04-06 22:18:56] | [Tool] | [Observation] | [[{"name": "Áo hai dây satin kem", "price": 20.32, "discount": 0.06}, {"name": "Áo croptop ribbed be", "price": 35.45, "discount": 0.46}, {"name": "Áo khoác bomber kaki", "price": 47.15, "discount": 0.44}, {"name": "Quần jogger nỉ xám", "price": 13.1, "discount": 0.37}, {"name": "Set bộ áo thun và quần short", "price": 37.67, "discount": 0.31}]]
+[2026-04-06 22:18:58] | [Agent] | [Thought] | [No thought found.]
+[2026-04-06 22:18:58] | [Agent] | [Final Answer] | [Các sản phẩm thời trang có giá nhỏ hơn 50 mà mình tìm được là:
+1. Áo hai dây satin kem - Giá: 20.32
+2. Áo croptop ribbed be - Giá: 35.45
+3. Áo khoác bomber kaki - Giá: 47.15
+4. Quần jogger nỉ xám - Giá: 13.1
+5. Set bộ áo thun và quần short - Giá: 37.67
+
+Hy vọng bạn sẽ tìm được sản phẩm ưng ý!]
+
+>> Final Answer: Các sản phẩm thời trang có giá nhỏ hơn 50 mà mình tìm được là:
+1. Áo hai dây satin kem - Giá: 20.32
+2. Áo croptop ribbed be - Giá: 35.45
+3. Áo khoác bomber kaki - Giá: 47.15
+4. Quần jogger nỉ xám - Giá: 13.1
+5. Set bộ áo thun và quần short - Giá: 37.67
+
+Hy vọng bạn sẽ tìm được sản phẩm ưng ý!
+
+==================================================
+Test Case TC2: Course: Kiểm tra các môn tiên quyết của Course 81.
+USER INPUT: Cho tôi hỏi môn Course 81 có yêu cầu môn học tiên quyết nào không?
+--------------------------------------------------
+[BASELINE CHATBOT RESULT]
+Để biết thông tin chi tiết về các yêu cầu tiên quyết của môn học Course 81, bạn cần xem trong tài liệu hướng dẫn môn học của trường hoặc hệ thống quản lý đào tạo của trường bạn đang học. Mỗi trường có thể có các quy định khác nhau. [UNSUPPORTED]
+
+--------------------------------------------------
+[REACT AGENT TRACE & RESULT]
+[2026-04-06 22:19:02] | [Agent] | [Thought] | [I need to check the prerequisites for the course "Course 81".]
+[2026-04-06 22:19:02] | [Agent] | [Action] | [prerequisite_check({"course_name": "Course 81"})]
+[2026-04-06 22:19:02] | [Tool] | [Observation] | [["Course 26", "Course 48"]]
+[2026-04-06 22:19:03] | [Agent] | [Thought] | [No thought found.]
+[2026-04-06 22:19:03] | [Agent] | [Final Answer] | [Môn học "Course 81" yêu cầu các môn học tiên quyết là "Course 26" và "Course 48".]
+
+>> Final Answer: Môn học "Course 81" yêu cầu các môn học tiên quyết là "Course 26" và "Course 48".
+
+==================================================
+Test Case TC3: Restaurant: Tìm nhà hàng xung quanh khu vực District 1.
+USER INPUT: Liệt kê cho tôi vài quán ăn nằm ở District 1.
+--------------------------------------------------
+[BASELINE CHATBOT RESULT]
+Dưới đây là một số quán ăn nổi tiếng ở Quận 1, TP. Hồ Chí Minh:
+
+1. **Quán Ngon 138** - Chuyên phục vụ các món ăn Việt Nam đặc sắc.
+2. **Cơm Tấm Mộc** - Nổi tiếng với món cơm tấm truyền thống.
+3. **Pizza 4P's** - Một lựa chọn cho các món pizza chất lượng cao.
+4. **Hum Vegetarian Café & Restaurant** - Nhà hàng chay với không gian yên tĩnh.
+5. **El Gaucho Argentinian Steakhouse** - Nhà hàng thịt nướng phong cách Argentina.
+6. **Ngọc Sương Sài Gòn** - Nổi tiếng với hải sản tươi ngon.
+7. **Marukame Udon** - Phục vụ các món udon và tempura của Nhật Bản.
+
+Lưu ý rằng thông tin trên có thể thay đổi theo thời gian. Nếu bạn cần thông tin chính xác hoặc thời gian thực, hãy kiểm tra trên các ứng dụng hoặc trang web liên quan. [UNSUPPORTED]
+
+--------------------------------------------------
+[REACT AGENT TRACE & RESULT]
+[2026-04-06 22:19:10] | [Agent] | [Thought] | [Người dùng muốn tìm các quán ăn ở District 1. Tôi sẽ sử dụng công cụ location_search để tìm các nhà hàng tại khu vực này.]
+[2026-04-06 22:19:10] | [Agent] | [Action] | [location_search({"location": "District 1"})]
+[2026-04-06 22:19:10] | [Tool] | [Observation] | [[]]
+[2026-04-06 22:19:11] | [Agent] | [Thought] | [No thought found.]
+[2026-04-06 22:19:11] | [Agent] | [Final Answer] | [Hiện tại, mình không tìm được thông tin về các quán ăn ở District 1. Mình xin lỗi vì sự bất tiện này. [OUT_OF_SCOPE]]
+
+>> Final Answer: Hiện tại, mình không tìm được thông tin về các quán ăn ở District 1. Mình xin lỗi vì sự bất tiện này. [OUT_OF_SCOPE]
+
+==================================================
+Test Case TC4: Travel: Tra cứu khả dụng khách sạn tại Paris.
+USER INPUT: Kiểm tra xem ở Paris hiện tại có khách sạn nào trống không?
+--------------------------------------------------
+[BASELINE CHATBOT RESULT]
+Xin lỗi, tôi không thể kiểm tra tình trạng phòng khách sạn hiện tại ở Paris. Bạn có thể thử kiểm tra trên các trang web đặt phòng trực tuyến như Booking.com hoặc Expedia. [UNSUPPORTED]
+
+--------------------------------------------------
+[REACT AGENT TRACE & RESULT]
+[2026-04-06 22:19:14] | [Agent] | [Thought] | [I need to check hotel availability in Paris.]
+[2026-04-06 22:19:14] | [Agent] | [Action] | [hotel_availability({"destination": "Paris"})]
+[2026-04-06 22:19:14] | [Tool] | [Observation] | [{"ok": false, "error_type": "no_data", "message": "No data found."}]
+[2026-04-06 22:19:15] | [Agent] | [Thought] | [No thought found.]
+[2026-04-06 22:19:15] | [Agent] | [Final Answer] | [Hiện tại mình không có dữ liệu về tình trạng phòng trống ở khách sạn Paris. Bạn có thể kiểm tra trực tiếp trên các trang web đặt phòng khách sạn như Booking.com hay Agoda để biết thông tin chi tiết nhé. [OUT_OF_SCOPE]]
+
+>> Final Answer: Hiện tại mình không có dữ liệu về tình trạng phòng trống ở khách sạn Paris. Bạn có thể kiểm tra trực tiếp trên các trang web đặt phòng khách sạn như Booking.com hay Agoda để biết thông tin chi tiết nhé. [OUT_OF_SCOPE]
+
+==================================================
+Test Case TC5: Banking: Tra cứu tỷ giá hối đoái của tài khoản ACC011.
+USER INPUT: Cho tôi biết tỷ giá hối đoái của tài khoản ACC011 là bao nhiêu?
+--------------------------------------------------
+[BASELINE CHATBOT RESULT]
+Xin lỗi, tôi không thể cung cấp tỷ giá hối đoái cho tài khoản cụ thể hoặc thông tin tài chính theo thời gian thực. Bạn có thể kiểm tra thông tin này qua dịch vụ ngân hàng trực tuyến hoặc liên hệ trực tiếp với ngân hàng của bạn. [UNSUPPORTED]
+
+--------------------------------------------------
+[REACT AGENT TRACE & RESULT]
+[2026-04-06 22:19:18] | [Agent] | [Thought] | [No thought found.]
+[2026-04-06 22:19:18] | [Agent] | [Action] | [currency_exchange({"account_id": "ACC011"})]
+[2026-04-06 22:19:18] | [Tool] | [Observation] | [0.84]
+[2026-04-06 22:19:18] | [Agent] | [Thought] | [No thought found.]
+[2026-04-06 22:19:18] | [Agent] | [Final Answer] | [Tỷ giá hối đoái của tài khoản ACC011 là 0.84.]
+
+>> Final Answer: Tỷ giá hối đoái của tài khoản ACC011 là 0.84.
+
+==================================================
+USER INPUT (Interactive): gợi ý cho mình các mặt hàng quần áo phù hợp với thời tiết Hanoi có trong data và hiển thị giá
+--------------------------------------------------
+[BASELINE CHATBOT RESULT]
+Tôi xin gợi ý cho bạn một số loại quần áo phù hợp với thời tiết ở Hà Nội theo từng mùa:
+
+1. **Mùa Xuân (tháng 3-5):**
+   - Áo khoác nhẹ: Giúp chống gió và giữ ấm khi cần thiết.
+   - Áo len mỏng hoặc áo cardigan.
+   - Giá tham khảo: Áo khoác nhẹ có thể từ 500.000 VND trở lên tùy thương hiệu.
+
+2. **Mùa Hè (tháng 6-8):**
+   - Áo phông hoặc áo sơ mi ngắn tay: Chọn chất liệu cotton để thấm hút mồ hôi tốt.
+   - Quần shorts hoặc váy ngắn.
+   - Giá tham khảo: Áo phông từ 200.000 VND, quần shorts từ 300.000 VND.
+
+3. **Mùa Thu (tháng 9-11):**
+   - Áo khoác mỏng, áo blazer.
+   - Áo len nhẹ hoặc áo dài tay.
+   - Giá tham khảo: Áo blazer từ 700.000 VND trở lên.
+
+4. **Mùa Đông (tháng 12-2):**
+   - Áo dạ, áo phao: Để giữ ấm tốt trong thời tiết lạnh.
+   - Áo len dày và quần dài.
+   - Giá tham khảo: Áo dạ từ 1.000.000 VND trở lên.
+
+Lưu ý rằng giá cả chỉ mang tính chất tham khảo và có thể thay đổi tùy theo cửa hàng và chất liệu sản phẩm. Nếu bạn cần thông tin chi tiết về giá từ một cửa hàng cụ thể, tôi không thể truy cập dữ liệu đó. [UNSUPPORTED]
+
+--------------------------------------------------
+[REACT AGENT TRACE & RESULT]
+[2026-04-06 22:19:55] | [Agent] | [Thought] | [The user is asking for fashion suggestions based on the weather in Hanoi. I need to get real-time weather data for Hanoi first.]
+[2026-04-06 22:19:55] | [Agent] | [Action] | [get_weather({"location": "Hanoi"})]
+[2026-04-06 22:19:55] | [Tool] | [Observation] | [{"ok": false, "error_type": "tool_execution_error", "message": "Error calling tool get_weather: get_weather() got an unexpected keyword argument 'location'"}]
+[2026-04-06 22:19:56] | [Agent] | [Thought] | [No thought found.]
+[2026-04-06 22:19:56] | [Agent] | [Final Answer] | [Mình chưa lấy được dữ liệu thời tiết thực tế ở Hà Nội lúc này. Bạn cho mình biết hiện tại trời nóng hay mát, có nắng hay mưa, và bạn cần mặc để đi làm hay đi chơi, mình sẽ gợi ý các mặt hàng phù hợp hơn từ cửa hàng nhé.]
+
+>> Final Answer: Mình chưa lấy được dữ liệu thời tiết thực tế ở Hà Nội lúc này. Bạn cho mình biết hiện tại trời nóng hay mát, có nắng hay mưa, và bạn cần mặc để đi làm hay đi chơi, mình sẽ gợi ý các mặt hàng phù hợp hơn từ cửa hàng nhé.
+
+==================================================
+USER INPUT (Interactive): gợi ý cho mình các mặt hàng quần áo phù hợp với thời tiết Hanoi có trong data và hiển thị giá với thời tiết nằng nóng để đi chơi
+--------------------------------------------------
+[BASELINE CHATBOT RESULT]
+Dựa trên thời tiết nắng nóng, bạn có thể cân nhắc các mặt hàng thời trang sau cho ngày đi chơi ở Hà Nội:
+
+1. **Áo thun cotton mỏng**: Loại vải này giúp thấm hút mồ hôi tốt và rất thoáng mát.
+2. **Quần shorts**: Giúp chân bạn thoáng mát hơn và dễ dàng di chuyển.
+3. **Đầm maxi**: Một sự lựa chọn thoải mái và phong cách, đặc biệt phù hợp cho các hoạt động ngoài trời.
+4. **Giày sandal hoặc dép xỏ ngón**: Để chân bạn được thoáng mát và thoải mái.
+5. **Nón rộng vành**: Giúp che nắng và bảo vệ da mặt của bạn.
+6. **Kính mát**: Bảo vệ mắt khỏi tia UV và mang lại phong cách thời trang.
+
+Về giá các mặt hàng, tôi không thể cung cấp thông tin chính xác. Vui lòng xem xét trên trang web bán hàng hoặc cửa hàng gần bạn. [UNSUPPORTED]
+
+--------------------------------------------------
+[REACT AGENT TRACE & RESULT]
+[2026-04-06 22:20:25] | [Agent] | [Thought] | [Người dùng đã cung cấp thông tin thời tiết và dịp sử dụng một cách cụ thể. Tôi sẽ sử dụng công cụ recommend_fashion_manual để đưa ra gợi ý thời trang thích hợp cho thời tiết "nóng có nắng" và dịp "đi chơi".]
+[2026-04-06 22:20:25] | [Agent] | [Action] | [recommend_fashion_manual({"weather": "nóng có nắng", "occasion": "đi chơi"})]
+[2026-04-06 22:20:25] | [Tool] | [Observation] | [[{"name": "Đầm hai dây hoa nhỏ", "price": 15.98, "discount": 0.17, "in_stock": true}, {"name": "Váy babydoll trắng", "price": 31.89, "discount": 0.22, "in_stock": true}, {"name": "Đầm dự tiệc satin đen", "price": 52.05, "discount": 0.42, "in_stock": true}, {"name": "Váy maxi trễ vai", "price": 57.78, "discount": 0.37, "in_stock": true}, {"name": "Sandal quai mảnh màu nude", "price": 61.16, "discount": 0.05, "in_stock": true}]]
+[2026-04-06 22:20:27] | [Agent] | [Thought] | [No thought found.]
+[2026-04-06 22:20:27] | [Agent] | [Final Answer] | [Dưới đây là các mặt hàng thời trang phù hợp với thời tiết "nóng có nắng" để đi chơi tại Hà Nội:
+
+1. Đầm hai dây hoa nhỏ - Giá: 15.98 USD (-17%)
+2. Váy babydoll trắng - Giá: 31.89 USD (-22%)
+3. Đầm dự tiệc satin đen - Giá: 52.05 USD (-42%)
+4. Váy maxi trễ vai - Giá: 57.78 USD (-37%)
+5. Sandal quai mảnh màu nude - Giá: 61.16 USD (-5%)
+
+Hy vọng các gợi ý trên sẽ giúp bạn có lựa chọn phù hợp!]
+
+>> Final Answer: Dưới đây là các mặt hàng thời trang phù hợp với thời tiết "nóng có nắng" để đi chơi tại Hà Nội:
+
+1. Đầm hai dây hoa nhỏ - Giá: 15.98 USD (-17%)
+2. Váy babydoll trắng - Giá: 31.89 USD (-22%)
+3. Đầm dự tiệc satin đen - Giá: 52.05 USD (-42%)
+4. Váy maxi trễ vai - Giá: 57.78 USD (-37%)
+5. Sandal quai mảnh màu nude - Giá: 61.16 USD (-5%)
+
+Hy vọng các gợi ý trên sẽ giúp bạn có lựa chọn phù hợp!
